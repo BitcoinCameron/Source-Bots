@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="public/brand/logo-mark.png" alt="OpenBots" width="132" />
+<img src="public/brand/logo-mark.png" alt="SourceBots" width="132" />
 
-# OpenBots
+# SourceBots
 
 **Four AI agents powered by Agnes 2.5 Pro, our own open model. They search the web, read pages, run code in a sandbox, call APIs, pay for services and sign up for them.<br/>Use them in the browser or run the whole stack on your own machine.**
 
@@ -14,19 +14,19 @@
 
 [Website](https://www.sourcebots.tech) · [Quick start](#quick-start) · [Agnes 2.5 Pro](#agnes-25-pro) · [Benchmarks](#benchmarks) · [Payments & sign-ups](#payments-and-sign-ups) · [Features](#features) · [Architecture](#architecture) · [API](#api-reference) · [Roadmap](#roadmap) · [X](https://x.com/BitcoinCameron)
 
-<img src="docs/assets/home.png" alt="OpenBots home screen with four 3D agents" width="100%" />
+<img src="docs/assets/home.png" alt="SourceBots home screen with four 3D agents" width="100%" />
 
 </div>
 
 ---
 
-## Why OpenBots
+## Why SourceBots
 
-Most assistants answer from memory and need plugins to do anything else. OpenBots agents **act**: each answer can
+Most assistants answer from memory and need plugins to do anything else. SourceBots agents **act**: each answer can
 involve searching the live web, opening sources, running Python in an isolated sandbox, calling public APIs, paying
 for a service and creating an account, and the chat shows every step they took.
 
-- **Our own open model.** Agents run on **Agnes 2.5 Pro**, the OpenBots open model and agent runtime, MIT licensed.
+- **Our own open model.** Agents run on **Agnes 2.5 Pro**, the SourceBots open model and agent runtime, MIT licensed.
 - **2.7× cheaper.** Agnes 2.5 Pro costs about 2.7 times less per completed agent task than comparable coding and agent tools. See [Benchmarks](#benchmarks).
 - **Outperforms Cursor, Codex and GrokBot** on our agent task benchmark: research, coding and API workflows end to end.
 - **Pays with anything, signs up anywhere.** Agents can pay through x402, crypto wallets and cards, and register accounts on websites, always within your limits and with your confirmation.
@@ -63,7 +63,7 @@ Every agent has its own personality, idle chatter and a real-time 3D body that r
 
 ## Agnes 2.5 Pro
 
-**Agnes 2.5 Pro** is the OpenBots open model and agent runtime. It powers every agent by default and is built for
+**Agnes 2.5 Pro** is the SourceBots open model and agent runtime. It powers every agent by default and is built for
 multi-step tool use: search, reading, code execution, API calls, payments and sign-ups.
 
 | | Agnes 2.5 Pro |
@@ -78,7 +78,7 @@ The runtime lives in [`api/chat.ts`](api/chat.ts): agent personas, the tool loop
 
 ## Benchmarks
 
-Agnes 2.5 Pro against popular coding and agent tools on the OpenBots agent task suite (research, coding,
+Agnes 2.5 Pro against popular coding and agent tools on the SourceBots agent task suite (research, coding,
 API and multi-step workflows, scored end to end).
 
 | | Agnes 2.5 Pro | Cursor | Codex | GrokBot |
@@ -99,12 +99,12 @@ Methodology, task list and raw results: [`docs/benchmarks.md`](docs/benchmarks.m
 | `web_search` | Searches the live web and cites sources | Agnes runtime or local | *"What changed in Node.js 24.22?"* |
 | `web_fetch` | Opens and reads a specific page or document | Agnes runtime or local | *"Summarise https://example.com/whitepaper.pdf"* |
 | `code_execution` | Isolated container with bash and Python for exact maths, data work and tested scripts | Sandbox | *"How much BTC and ETH can I buy for $2,500? Show a table."* |
-| `http_request` | Calls public REST/JSON APIs, recognises x402 payment requests | OpenBots server, SSRF-guarded | *"Query the CoinGecko API for SOL and compare it with last week."* |
-| `pay` | Pays for an API or service via x402, crypto wallet or card, within your limits and after your confirmation | OpenBots server | *"Buy one call to this x402 weather API."* |
+| `http_request` | Calls public REST/JSON APIs, recognises x402 payment requests | SourceBots server, SSRF-guarded | *"Query the CoinGecko API for SOL and compare it with last week."* |
+| `pay` | Pays for an API or service via x402, crypto wallet or card, within your limits and after your confirmation | SourceBots server | *"Buy one call to this x402 weather API."* |
 | `sign_up` | Registers an account on a website in an isolated browser, after your confirmation | Isolated browser worker | *"Create a free account on this service and get me an API key."* |
 | File upload | Reads CSV, PDF and Excel files you attach, analyses them in the sandbox and plots charts | Sandbox | *"Here is my trades.csv. Chart monthly P&L."* |
-| `delegate` | Hands a sub-task to another agent and merges the results into one answer | OpenBots server | *"PLUTUS, design a momentum strategy and have HEPHAESTUS backtest it."* |
-| Live market snapshot | FX rates and BTC/ETH/SOL prices injected into every request | OpenBots server | *"USD/RUB right now?"* |
+| `delegate` | Hands a sub-task to another agent and merges the results into one answer | SourceBots server | *"PLUTUS, design a momentum strategy and have HEPHAESTUS backtest it."* |
+| Live market snapshot | FX rates and BTC/ETH/SOL prices injected into every request | SourceBots server | *"USD/RUB right now?"* |
 
 Every tool works both with the hosted runtime and in local mode through function calling in Ollama;
 see [Tools for local models](#tools-for-local-models).
@@ -120,8 +120,8 @@ Open **[www.sourcebots.tech](https://www.sourcebots.tech)**, hover an agent and 
 Requires Node.js 20+ and Git.
 
 ```bash
-git clone https://github.com/BitcoinCameron/Source-Bots.git openbots
-cd openbots
+git clone https://github.com/BitcoinCameron/Source-Bots.git SourceBots
+cd SourceBots
 npm ci
 cp .env.example .env          # then add your keys, see Configuration
 npm run dev                   # http://localhost:3000
@@ -132,11 +132,11 @@ Production build: `npm run build && npm start`.
 ### Run with Docker
 
 ```bash
-git clone https://github.com/BitcoinCameron/Source-Bots.git openbots
-cd openbots
+git clone https://github.com/BitcoinCameron/Source-Bots.git SourceBots
+cd SourceBots
 cp .env.example .env
-docker build -t openbots .
-docker run -d --name openbots -p 3000:3000 --env-file .env openbots
+docker build -t SourceBots .
+docker run -d --name SourceBots -p 3000:3000 --env-file .env SourceBots
 curl http://localhost:3000/api/status        # → "status": "online"
 ```
 
@@ -148,7 +148,7 @@ No cloud keys. Nothing leaves your machine except the optional market snapshot a
 # 1. Install Ollama from https://ollama.com and pull a model
 ollama pull llama3.1                # or qwen2.5, mistral, gemma2 …
 
-# 2. Point OpenBots at it
+# 2. Point SourceBots at it
 cat >> .env <<'ENV'
 LOCAL_MODEL_BASE_URL=http://localhost:11434/v1
 LOCAL_MODEL_NAME=llama3.1
@@ -176,7 +176,7 @@ All settings are environment variables (`.env` locally, your hosting settings in
 | `PAYMENTS_LIMIT_USD` | `5` | Spending limit per user per day |
 | `SIGNUP_ENABLED` | `false` | Turns on the `sign_up` tool |
 
-**Provider routing.** For every message OpenBots tries, in order: hosted Agnes 2.5 Pro runtime → local model →
+**Provider routing.** For every message SourceBots tries, in order: hosted Agnes 2.5 Pro runtime → local model →
 built-in templates. The first one that is configured and answers wins, so the app always
 responds, even with no keys at all.
 
@@ -188,7 +188,7 @@ flowchart LR
         UI["React 19 UI<br/>3D agents (three.js / R3F)"]
     end
 
-    subgraph Server["OpenBots server (serverless function or Express)"]
+    subgraph Server["SourceBots server (serverless function or Express)"]
         API["POST /api/chat"]
         MKT["Live market snapshot<br/>FX + crypto"]
         ROUTER{"Provider router"}
@@ -230,7 +230,7 @@ flowchart LR
 ```mermaid
 sequenceDiagram
     participant U as User
-    participant S as OpenBots server
+    participant S as SourceBots server
     participant M as Agnes 2.5 Pro
     participant T as Tools
 
@@ -266,7 +266,7 @@ sequenceDiagram
 ### Pay with anything
 
 [x402](https://www.x402.org/) lets an HTTP API ask for payment with a `402 Payment Required` response.
-OpenBots parses both protocol versions (requirements in the JSON body for v1, base64 `PAYMENT-REQUIRED` header for
+SourceBots parses both protocol versions (requirements in the JSON body for v1, base64 `PAYMENT-REQUIRED` header for
 v2) and hands the agent a structured quote:
 
 ```json
@@ -391,7 +391,7 @@ data: {"model":"agnes-2.5-pro","provider":"agnes","toolsUsed":[{"id":"srvtoolu_0
 Reports which providers are configured. It never returns key values.
 
 ```json
-{ "status": "online", "platform": "OpenBots", "agnesModel": "agnes-2.5-pro", "hasAgnesKey": true, "hasLocalModel": false }
+{ "status": "online", "platform": "SourceBots", "agnesModel": "agnes-2.5-pro", "hasAgnesKey": true, "hasLocalModel": false }
 ```
 
 ## Security
@@ -462,11 +462,11 @@ and respect per-user spending limits. Details and the reporting process are in [
 ## FAQ
 
 **Is the model open source?**
-Yes. Agnes 2.5 Pro and the OpenBots platform are open under MIT. You can also run any open-weight model
+Yes. Agnes 2.5 Pro and the SourceBots platform are open under MIT. You can also run any open-weight model
 (Llama, Qwen, Mistral, Gemma) by setting `LOCAL_MODEL_BASE_URL`; see [Run fully local](#run-fully-local-with-an-open-weight-model).
 
 **What does it cost?**
-OpenBots is free. Agnes 2.5 Pro is about 2.7× cheaper per completed task than comparable agent tools; see
+SourceBots is free. Agnes 2.5 Pro is about 2.7× cheaper per completed task than comparable agent tools; see
 [Benchmarks](#benchmarks), and prompt caching makes the repeated system prompt about 10× cheaper on every
 request. A local model costs nothing beyond your hardware.
 
@@ -490,7 +490,7 @@ issues privately as described in [SECURITY.md](SECURITY.md).
 
 ## License
 
-[MIT](LICENSE) © OpenBots contributors · [www.sourcebots.tech](https://www.sourcebots.tech) · [@BitcoinCameron](https://x.com/BitcoinCameron)
+[MIT](LICENSE) © SourceBots contributors · [www.sourcebots.tech](https://www.sourcebots.tech) · [@BitcoinCameron](https://x.com/BitcoinCameron)
 
 Built with [React](https://react.dev), [three.js](https://threejs.org), [React Three Fiber](https://r3f.docs.pmnd.rs),
 [Vite](https://vite.dev), [Tailwind CSS](https://tailwindcss.com) and [Express](https://expressjs.com).
